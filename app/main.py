@@ -7,7 +7,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/ncov', methods=['GET'])
+@app.route('/', methods=['GET'])
 def index():
     url = "https://ncov.moh.gov.vn/"
     header = {
