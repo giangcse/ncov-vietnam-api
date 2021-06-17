@@ -3,12 +3,14 @@ import re
 import json
 from bs4 import BeautifulSoup
 from flask import Flask
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
 def index():
+    requests.packages.urllib3.disable_warnings(InsecureRequestWarning)  # Disable warning
     url = "https://ncov.moh.gov.vn/"
     header = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36"}
