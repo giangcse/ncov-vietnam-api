@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.route('/ncov', methods=['GET'])
-def get_data():
+def index():
     url = "https://ncov.moh.gov.vn/"
     header = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36"}
