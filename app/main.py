@@ -34,8 +34,8 @@ def index():
                 my_str.remove(c)
         # Result: ['Việt Nam', 'Số ca nhiễm 11.635', 'Đang điều trị 6.980', 'Khỏi 4.590', 'Tử vong 61', 'Thế giới', 'Tổng ca nhiễm 177.786.258', 'Đang nhiễm 11.654.173', '', 'Khỏi 162.283.936', '', '', 'Tử vong 3.848.149']
 
-        my_dict = {"Việt Nam": [{"Ca nhiễm": my_str[1][my_str[1].rindex(" "):], "Đang điều trị": my_str[2][my_str[2].rindex(" "):], "Khỏi": my_str[3][my_str[3].rindex(" "):], "Tử vong": my_str[4][my_str[4].rindex(
-            " "):]}], "Thế giới": [{"Ca nhiễm": my_str[6][my_str[6].rindex(" "):], "Đang nhiễm": my_str[7][my_str[7].rindex(" "):], "Khỏi": my_str[9][my_str[9].rindex(" "):], "Tử vong": my_str[12][my_str[12].rindex(" "):]}]}
+        my_dict = {"Việt Nam": [{"Ca nhiễm": int(my_str[1][my_str[1].rindex(" "):].strip()), "Đang điều trị": int(my_str[2][my_str[2].rindex(" "):].strip()), "Khỏi": int(my_str[3][my_str[3].rindex(" "):].strip()), "Tử vong": int(my_str[4][my_str[4].rindex(" "):].strip())}], "Thế giới": [
+            {"Ca nhiễm": int(my_str[6][my_str[6].rindex(" "):].strip()), "Đang nhiễm": int(my_str[7][my_str[7].rindex(" "):].strip()), "Khỏi": int(my_str[9][my_str[9].rindex(" "):].strip()), "Tử vong": int(my_str[12][my_str[12].rindex(" "):].strip())}]}
         return json.dumps(my_dict)
     except ConnectionError:
         print("Loi ket noi den may chu")
